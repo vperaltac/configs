@@ -1,12 +1,13 @@
-set nocompatible              " be iMproved, required
-set background=dark           " Setting dark mode
+set nocompatible     " be iMproved, required
+set background=dark  " Setting dark mode
 set relativenumber
-set vb t_vb= "No more beeps
+set cursorline       "highlight current line
+set vb t_vb=         "No more beeps
 set number
-"set mouse=a "Enable mouse usage in terminal
-set noshowmode "Disable mode indicator (replaced by airline plugin)
-
-filetype off                  " required
+"set mouse=a         "Enable mouse usage in terminal
+set noshowmode       "Disable mode indicator (replaced by airline plugin)
+set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+filetype off         " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -22,22 +23,20 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
-"Plugin 'morhetz/gruvbox'
-Plugin 'sonph/onehalf', { 'rtp' : 'vim' }
-Plugin 'vim-airline/vim-airline'
+Plugin 'morhetz/gruvbox'
+Plugin 'itchyny/lightline.vim'
 
-Plugin 'hashivim/vim-terraform'
+Plugin 'dense-analysis/ale'
+
+
+"Language packs
+Plugin 'sheerun/vim-polyglot'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-
-"autocmd vimenter * ++nested colorscheme gruvbox " Enable gruvbox theme
-set t_Co=256
-set cursorline
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+autocmd vimenter * ++nested colorscheme gruvbox " Enable gruvbox theme
 let g:gruvbox_contrast_dark = 'hard'            " High contrast
 
 if exists('+termguicolors')
@@ -46,4 +45,8 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+set laststatus=2 "Fixes weird bug with lightline
 
+" Permanent undo
+set undodir=~/.vim/undodir
+set undofile
