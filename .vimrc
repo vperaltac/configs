@@ -8,6 +8,9 @@ set noshowmode       " Disable mode indicator (replaced by airline plugin)
 set hlsearch         " Highlight search matches
 set incsearch        " Highlight search matches in real time
 "set mouse=a         " Enable mouse usage in terminal
+set expandtab        " Spaces instead of tabs
+set tabstop=2        " indent 2 spaces with tab
+set shiftwidth=2     " indent 2 spaces with <<>>
 
 filetype off         " required
 
