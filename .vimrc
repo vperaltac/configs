@@ -24,6 +24,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'vperaltac/onehalf', {'rtp': 'vim'}
 Plugin 'dense-analysis/ale'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'preservim/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
